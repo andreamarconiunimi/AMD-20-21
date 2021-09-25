@@ -2,7 +2,8 @@
 Market-Basket analysis for the course  "Algorithms for massive datasets" of prof. Malchiodi.
 
 This repository stores my contribution to the project "Market-basket analysis", using the IMDb dataset, available here on Kaggle:
-https://www.kaggle.com/ashirwadsangwan/imdb-dataset
+[IMDb dataset](https://www.kaggle.com/ashirwadsangwan/imdb-dataset)
+
 The aim of the project is to implement an algorithm that find frequent itemsets, using movies as baskets and actors as items.
 
 I implemented from scratch the A-Priori algorithm and I evaluted with the common metrics of association rules the frequent itemsets found with the implemented algorithm.
@@ -38,4 +39,4 @@ Frequent item sets of dimension 3: 0
 
 I also implemented the same algorithm using PySpark and the RDD data structure. We can check out the result of the two solutions in terms of time required to output the solution and correctness of the algorithms comparing the results of the two.
 
-For bigger dataset we can implement the SON algorithm which is a distributed version of the implemented solutions. It splits the datasets in chunks, process every chunk and union the counts.
+For bigger dataset we can implement the SON algorithm which is a distributed version of the implemented solutions. It splits the datasets in chunks, process every chunk and perform the union of items support.
