@@ -37,6 +37,50 @@ Frequent item sets of dimension 4: 0
 --- 1561.8563289642334 seconds ---
 ```
 
+From the output above we can get the association rules, for instance, of size k:
+```
+If ('nm1698868', 'nm2366585') then nm2384746 
+Confidence: 0.26666666666666666
+Interest: 0.2662754621632423
+
+If ('nm1698868', 'nm2366585') then nm2367854 
+Confidence: 0.24444444444444444
+Interest: 0.24424884219273227
+
+If ('nm0648803', 'nm1770187') then nm2077739 
+Confidence: 0.21649484536082475
+Interest: 0.2161976315497816
+
+If ('nm0648803', 'nm1770187') then nm2082516 
+Confidence: 0.26804123711340205
+Interest: 0.26763225058709483
+
+If ('nm0648803', 'nm1770187') then nm2373718 
+Confidence: 0.2268041237113402
+Interest: 0.22647896672148105
+
+If ('nm0648803', 'nm2077739') then nm2082516 
+Confidence: 0.23008849557522124
+Interest: 0.22967950904891402
+
+If ('nm0648803', 'nm2077739') then nm2373718 
+Confidence: 0.22123893805309736
+Interest: 0.2209137810632382
+
+If ('nm0648803', 'nm2082516') then nm2373718 
+Confidence: 0.19727891156462585
+Interest: 0.1969537545747667
+
+If ('nm1770187', 'nm2082516') then nm2373718 
+Confidence: 0.23809523809523808
+Interest: 0.23777008110537892
+
+If ('nm2077739', 'nm2082516') then nm2373718 
+Confidence: 0.22772277227722773
+Interest: 0.22739761528736857
+
+```
+
 I also implemented the same algorithm using PySpark and the RDD data structure. We can check out the result of the two solutions in terms of time required to output the solution and correctness of the algorithms comparing the results of the two.
 
 For bigger dataset we can implement the SON algorithm which is a distributed version of the implemented solutions. It splits the datasets in chunks, process every chunk and perform the union of items support.
