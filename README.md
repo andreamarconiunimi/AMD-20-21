@@ -38,6 +38,7 @@ Frequent item sets of dimension 4: 0
 ```
 
 From the output above we can get the association rules, for instance, of size k=3:
+(please note that these are not all the association rules, just a sample)
 ```
 If ('nm1698868', 'nm2366585') then nm2384746 
 Confidence: 0.26666666666666666
