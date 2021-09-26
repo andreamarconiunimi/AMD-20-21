@@ -1,0 +1,57 @@
+per ogni basket
+	qui prima però va fatta una flatMap per ottenere un'unica lista
+	.map(lambda x : (x,1)) -- ottengo per elemento del basket la sua tupla (chiave,1)
+	-- siccome poi è un pairRDD (x,1) e voglio ottenere il conto totale devo fare reduceByKey
+	.reduceByKey(lambda x,y : x+y)
+	-- siccome è un pairRDD dovrebbe fissare la chiave e prendere i soli valori e applica la funzione
+	.map(lambda x : x>= s) 
+	-- s threshold in funzione se uso sampling o meno
+	-- qui semplicemente poi devo filtrare il risultato
+	
+	
+	secondo l'algoritmo devo ottenere una lista delle chiavi di quelle frequenti
+	richiederebbe di lavorare su piccoli Integer quindi servirebbe un dizionario
+	
+	
+	il problema si pone quando devo operare sulle liste singole dei basket
+	quindi devo generare le coppie se i due elementi sono frequenti
+	
+	l'idea sarebbe trova i singoli che sono frequenti e poi genera le coppie chiave ((x,y),1)
+	si potrà fare?
+	senza flatMap, mi servono le liste dei basket
+		per ogni elemento del basket, se è frequente bene
+		finito genero tutte le coppie
+		
+	.map(lambda x for x in lista if x in frequent)
+	
+	il problema è che non devo generare per forza tutte le coppie se poi non le incontro
+	ma come faccio a generare le coppie?
+	
+	per ogni elemento del basket che è frequente genero una coppia 
+	quindi dovrei verificare quali sono gli elementi del basket che sono frequenti e poi fare le combinazioni
+	siccome ho i basket in questa forma
+	[
+	[1,2,3,4],
+	[2,1,3],
+	[5,2,1]
+	]
+	come faccio?
+	per ognuno deve essere frequente,
+	il risultato deve combinare con lambda function non penso si possa fare
+	
+	il concetto di fonto è che non devo generare copppie che so gia che non sono frequenti
+	il problema è quante volte devo passare sui dati
+	
+	però 
+		bisogna capire che input necessita la funzione per le combinazioni
+		il risultato deve essere
+		a partire da 
+		[1,2,3,4]
+		qui è da capire perchè magari basta semplicemente generarle a condizione che tot sia frequente
+		con frequenti 1,2,3 (serve un lookup in tempo costante sugli elementi della lista )
+		genero ((1,2),1), ((1,3),1), ((2,3),1)
+		poi banale reduceByKey e sommo e filtro
+		
+		successivamente devo generare le triple cioè
+		stessa cosa concettualmente dei singoli cioè verifico che ogni tripla che voglio generare contenga coppie frequenti
+		a parti
