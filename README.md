@@ -39,9 +39,6 @@ Frequent item sets of dimension 4: 0
 
 From the output above we can get the association rules, for instance, of size k=3:
 ```
-nm2384746
-Association rule
-===========================
 Association rule
 ===========================
 If ('nm1698868', 'nm2366585') then nm2384746 
