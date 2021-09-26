@@ -1,3 +1,7 @@
+<a href="https://colab.research.google.com/drive/1CkFNCIyK15chAsuczQMhnZXzZz-WLOfT?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 # AMD-20-21
 Market-Basket analysis for the course  "Algorithms for massive datasets" of prof. Malchiodi.
 
