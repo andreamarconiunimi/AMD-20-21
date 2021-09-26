@@ -312,6 +312,6 @@ Interest: 0.20324260919780643
 
 ```
 
-I also implemented the same algorithm using PySpark and the RDD data structure. We can check out the result of the two solutions in terms of time required to output the solution and correctness of the algorithms comparing the results of the two.
+I also implemented the same algorithm using PySpark and the RDD data structure but I didn't like the result and the efficiency so is not included in my proposed solutions. The implementation is available in the notebook in the section "Code graveyard".
 
 For bigger dataset we can implement the SON algorithm which is a distributed version of the implemented solutions. It splits the datasets in chunks, process every chunk and perform the union of items support.
